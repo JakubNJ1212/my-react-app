@@ -29,3 +29,15 @@
   color: hsl(0, 0%, 20%)
 }
 
+.student {
+  font-family: Arial, sans-serif;
+  font-size: 2em;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+  
+}
+
+.student p{
+  margin: 0;
+}
