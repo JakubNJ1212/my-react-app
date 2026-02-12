@@ -41,3 +41,20 @@
 .student p{
   margin: 0;
 }
+
+
+.welcome-message {
+  font-family: Arial, sans-serif;
+  size: 2.5em;
+  background-color: green;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.login-message {
+  font-family: Arial, sans-serif;
+  size: 2.5em;
+  background-color: red;
+  padding: 15px;
+  border-radius: 10px;
+}
