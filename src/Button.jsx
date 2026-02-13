@@ -10,8 +10,10 @@ function Button(){
    }
 
 
+   const handleClick = () => console.log("Ouch");
+
  return(
-    <button style = {styles}>Click me</button>
+    <button style = {styles} onClick={handleClick}>Click me</button>
  )
 }
 
