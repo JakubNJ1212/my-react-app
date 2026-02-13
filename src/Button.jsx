@@ -9,8 +9,19 @@ function Button(){
   cursor: "pointer",
    }
 
+let count = 0;
 
-   const handleClick = () => console.log("Ouch");
+   const handleClick = (name) => {
+      if (count < 3){
+         count++;
+         console.log(`${name} you've clicked me ${count} times`);
+      } else {
+         console.log(`${name} stop clicking me!`);
+      }
+   }
+
+
+
 
  return(
     <button style = {styles} onClick={handleClick}>Click me</button>
