@@ -1,13 +1,11 @@
-import Button from './Button.jsx'
-import Picture from './Picture.jsx'
-
+import MyComponent from './MyComponent.jsx'
 
 function App() {
 
 
   return (
     <>
-     <Picture/>
+     
     </>
   );
 }
