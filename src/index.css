@@ -84,3 +84,33 @@ margin: 0;
 background-color: hsl(45, 93%, 40%);
 cursor: pointer;
 }
+
+
+.counter-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.count-display {
+  font-size: 5em;
+  margin-top: 0;
+  margin-bottom: 50px;
+
+}
+
+.count-button {
+  width: 150px;
+  height: 70px;
+  font-size: 1.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0px 5px;
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.count-button:hover {
+  background-color: yellowgreen;
+}

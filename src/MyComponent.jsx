@@ -14,7 +14,9 @@ const incrementAge = () => {
     setAge(age +1);
 }
 
-
+const toggleEmployementStatus = () => {
+    setIsEmployed(!isEmployed);
+}
 return(
 
         <div>
@@ -24,7 +26,7 @@ return(
             <button onClick={incrementAge}>increment Age:</button>
 
             <p>Employed {isEmployed ? "Yes" : "No"}</p>
-            <button onClick={() => setIsEmployed(!isEmployed)}>Toggle Employment Status</button>
+            <button onClick={toggleEmployementStatus}>Toggle Status</button>
         </div>  );
 
 }
