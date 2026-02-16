@@ -59,7 +59,7 @@ return(
                 <input type="radio" value="cc-paket" checked={shipping === "cc-paket"} onChange={handleShippingChange}></input>
                 CC paket: 
             </label>
-            <p>Shipping: {shipping}</p>
+            <p>Shipping option {shipping}</p>
             
         </div> 
 
