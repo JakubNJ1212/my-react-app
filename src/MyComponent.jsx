@@ -2,32 +2,32 @@ import React, {useState} from 'react';
 
 function MyComponent() {
 
-const [name, setName] = useState("Guest");
-const [age, setAge] = useState(0);
-const [isEmployed, setIsEmployed] = useState(false);
+const [name, setName] = useState("Ime");
+const [quantity, setQuantity] = useState("kolicina");
 
-const updateName = () => {
-    setName('Petar');
-}
 
-const incrementAge = () => {
-    setAge(age +1);
-}
+    function handleNameChange(event){
+        setName(event.target.value);
+    }
 
-const toggleEmployementStatus = () => {
-    setIsEmployed(!isEmployed);
-}
+    function handleQuantityChange(event) {
+        setQuantity(event.target.value);
+    }
+
 return(
 
         <div>
-             <p>Name: {name}</p>
-            <button onClick={updateName}>Set name:</button>
-            <p>Age: {age}</p>
-            <button onClick={incrementAge}>increment Age:</button>
+            <input value={name} onChange={handleNameChange}></input>
+            
+            <p>Name: {name}</p>
 
-            <p>Employed {isEmployed ? "Yes" : "No"}</p>
-            <button onClick={toggleEmployementStatus}>Toggle Status</button>
-        </div>  );
+
+
+            <input value={quantity} onChange={handleQuantityChange}></input>
+            <p>Quantity: {quantity}</p>
+        </div> 
+
+     );
 
 }
 
