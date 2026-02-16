@@ -6,6 +6,7 @@ const [name, setName] = useState("Ime");
 const [quantity, setQuantity] = useState(1);
 const [comment, setComment] = useState();
 const [payment, setPayment] = useState("");
+const [shipping, setShipping] = useState()
 
 
     function handleNameChange(event){
@@ -22,6 +23,10 @@ const [payment, setPayment] = useState("");
 
     function handlePaymentChange(event) {
         setPayment(event.target.value);
+    }
+
+    function handleShippingChange(event) {
+        setShipping(event.target.value);
     }
 
 return(
@@ -43,6 +48,18 @@ return(
                 <option value="Placanje karticom">Placanje karticom</option>
                 <option value="Kripto">Kripto</option>
             </select>
+
+    <br></br>
+            <label>
+                <input type="radio" value="hitna-dostava" checked={shipping === "hitna-dostava"} onChange={handleShippingChange}></input>
+                Hitna dostava: 
+            </label>
+
+            <label>
+                <input type="radio" value="cc-paket" checked={shipping === "cc-paket"} onChange={handleShippingChange}></input>
+                CC paket: 
+            </label>
+            <p>Shipping: {shipping}</p>
             
         </div> 
 
