@@ -10,8 +10,8 @@ const [color, setColor] = useState("Green");
 
 
 useEffect(() =>  {
-    document.title = `Count: ${count}` 
-}, [count])
+    document.title = `Count: ${count} ${color}` 
+}, [count, color])
 
 
 
@@ -27,11 +27,15 @@ function handleSubCount() {
     setCount(c => c - 1)
 }
 
+function changeColor() {
+    setColor(c => c === "Green" ? "Red" : "Green")
+}
+
 return(<>
-    <p>Count: {count}</p>    
+    <p style={{color: color}}>Count: {count}</p>    
     <button onClick={handleAddCount}>Add</button>
     <button onClick={handleSubCount}>Subtract</button><br/>
-    <button onClick={handleSubCount}>Change color</button>
+    <button onClick={changeColor}>Change color</button>
 </>
  );
 
