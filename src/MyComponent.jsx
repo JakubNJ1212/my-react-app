@@ -1,62 +1,37 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 function MyComponent() {
 
-    const [cars, setCars] = useState([]);
-    const [carYear, setCarYear] = useState(new Date().getFullYear());
-    const [carMake, setCarMake] = useState("");
-    const [carModel, setCarModel] = useState("");
+const [count, setCount] = useState(0);
+const [color, setColor] = useState("Green");
 
 
-    function handleAddCar() {
-        const newCar = {year: carYear, make: carMake, model: carModel};
-
-        setCars(c => [...c, newCar]);
-
-        setCarYear(new Date().getFullYear())
-        setCarMake("");
-        setCarModel("");
-    }
-
-    function handleRemoveCar(index) {
-        setCars(c => c.filter((_, i) => i !== index));
-    }
-
-    function handleYearChange(event) {
-        setCarYear(event.target.value);
-    };
-    
-    function handleMakeChange(event) {
-        setCarMake(event.target.value);
-    }
-
-     function handleModelChange(event) {
-        setCarModel(event.target.value);
-    }
 
 
+
+useEffect(() =>  {
+    document.title = `Count: ${count}` 
+}, [count])
+
+
+
+
+
+
+
+function handleAddCount() {
+    setCount(c => c + 1)
+}
+
+function handleSubCount() {
+    setCount(c => c - 1)
+}
 
 return(<>
-    <div>
-         <h2>List of car objects</h2>   
-
-         <ul>
-            {cars.map((car, index  ) => 
-                <li key={index} onClick={() =>handleRemoveCar(index)}>
-                    {car.year} {car.make} {car.model}
-
-                </li>)}
-         </ul>
-
-         <input type="number" value={carYear} onChange={handleYearChange}/>
-            <br></br>
-         <input type="text" value={carMake} placeholder="Add Make" onChange={handleMakeChange}/>
-            <br></br>
-         <input type="text" value={carModel} placeholder="Add Model" onChange={handleModelChange}/>
-            <br></br>
-            <button onClick={handleAddCar}>Add car</button>
-   
-    </div>
+    <p>Count: {count}</p>    
+    <button onClick={handleAddCount}>Add</button>
+    <button onClick={handleSubCount}>Subtract</button><br/>
+    <button onClick={handleSubCount}>Change color</button>
 </>
  );
 
