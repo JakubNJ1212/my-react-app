@@ -1,11 +1,11 @@
 import ComponentD from './ComponentD.jsx'
 
 
-function ComponentC() {
+function ComponentC(props) {
     return(
         <div className="Box">
             <h1>Component C</h1>
-            <ComponentD/>
+            <ComponentD user={props.user}/>
         </div>
     )
 }
