@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 
 function MyComponent() {
 
-    const ref = useRef(0);
+    const inputRef = useRef(null);
 
 
     useEffect(() => {
@@ -11,13 +11,14 @@ function MyComponent() {
     });
 
     function handleClick() {
-        ref.current = ref.current + 1;
-        console.log(ref.current)
+        inputRef.current.focus();
+        inputRef.current.style.backgroundColor="yellow";
     };
 
  return(
     <>
         <button onClick={handleClick}>Click me</button>
+        <input ref={inputRef}/>
     </>
  )
 
