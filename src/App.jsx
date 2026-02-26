@@ -1,7 +1,3 @@
-import ComponentA from './ComponentA.jsx'
-
-
-
 
 
 function App() {
@@ -9,8 +5,7 @@ function App() {
 
   return (
     <>
-      <ComponentA/>
-
+    
     </>
   );
 }
