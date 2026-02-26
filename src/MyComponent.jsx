@@ -1,36 +1,25 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 
 function MyComponent() {
 
-    const [width, setWidth] = useState(window.innerWidth)
-    const [height, setHeight] = useState(window.innerHeight)
+    const ref = useRef(0);
+
 
     useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    console.log("EVENT LISTENER ADDED");
 
+        console.log("Logged/rendered")
+    });
 
-        return() => {
-            window.removeEventListener("resize", handleResize);
-            console.log("EVENT LISTENER REMOVED");
-        }
+    function handleClick() {
+        ref.current = ref.current + 1;
+        console.log(ref.current)
+    };
 
-
-    }, []);
-
-
-    function handleResize() {
-        setWidth(windows.innerWidth);
-        setHeight(windows.innerHeight);
-    }
-
-
-
-return(<>
-        <p>Window width: {width}px</p><br/>
-        <p>Window height: {height}px</p>
-</>
- );
+ return(
+    <>
+        <button onClick={handleClick}>Click me</button>
+    </>
+ )
 
 }
 
