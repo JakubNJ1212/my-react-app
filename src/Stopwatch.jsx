@@ -10,7 +10,7 @@ function Stopwatch() {
     const startTimeRef = useRef(0);
 
 
-    useEffects(() => {
+    useEffect(() => {
 
 
     }, [isRunning]) ;
@@ -34,7 +34,13 @@ function Stopwatch() {
     return(<>
    <div className="stopwatch">
         <div className="display">
-            {formatTime}
+            {formatTime()}
+        </div>
+        <div className="controls">
+            <button onClick={start}  className="start-button">Start</button>
+            <button onClick={stop}  className="stop-button">Stop</button>
+
+
         </div>
 
 
